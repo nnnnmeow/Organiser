@@ -18,6 +18,7 @@ void clear(string name)
 {
 	ofstream file(name);
 	file << "";
+	file.close();
 }
 
 //Get cases from file
@@ -64,6 +65,7 @@ void WriteCase(vector<Case> cases, string filename)
 //Rewrite case
 void RewriteCase(vector<Case> cases, string filename)
 {
+	clear(filename);
 	ofstream out(filename);
 	for (int i = 0; i < cases.size(); i++)
 	{

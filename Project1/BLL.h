@@ -21,11 +21,13 @@ void ShowCases(vector<Case> cases)
 //show certain case 
 void ShowCase(vector<Case> cases, int casenum)
 {
+	bool found = false;
 	if (cases.size() <= 0) return;
 	for (int i = 0; i < cases.size(); i++)
 	{
 		if (i == casenum)
 		{
+			found = true;
 			cout << "----Case #" << i << "----" << endl;
 			cout << "Name: " << cases[i].CaseName << endl;
 			cout << "Priority: " << cases[i].Priorities << endl;
@@ -36,6 +38,11 @@ void ShowCase(vector<Case> cases, int casenum)
 		}
 
 	}
+	if (found == false)
+	{
+		cout << "Nothing found!" << endl;
+		return;
+	}
 }
 //--------------------------------------------------------------------------------//
 
@@ -44,6 +51,7 @@ void ShowCase(vector<Case> cases, int casenum)
 void RemoveCases(vector<Case> cases)
 {
 	if (cases.size() <= 0) return;
+	cout << "Clean!" << endl;
 	clear("Path.txt");
 }
 //----------------------------------------------------------------------------------//
@@ -72,7 +80,10 @@ void FindName(vector<Case> cases, string name)
 	if (found == false)
 	{
 		cout << "Nothing found!" << endl;
+		cout << "-------------------------------------------" << endl;
+		return;
 	}
+
 	cout << "-------------------------------------------" << endl;
 }
 //show cases by priority
@@ -98,6 +109,8 @@ void FindPriority(vector<Case> cases, string priority)
 	if (found == false)
 	{
 		cout << "Nothing found!" << endl;
+		cout << "-------------------------------------------" << endl;
+		return;
 	}
 	cout << "-------------------------------------------" << endl;
 }
@@ -107,11 +120,13 @@ void FindPriority(vector<Case> cases, string priority)
 void ChangeCase(vector<Case> cases, int casenum)
 {
 	int choice = 0;
+	bool found = false;
 	if (cases.size() <= 0) return;
 	for (int i = 0; i < cases.size(); i++)
 	{
 		if (i == casenum)
 		{
+			found = true;
 			cout << "Enter name: ";
 			cin >> cases[i].CaseName;
 			cout << "Enter priority:" << endl << "1. High" << endl << "2. Medium" << endl << "3. Low" << endl;
@@ -137,6 +152,11 @@ void ChangeCase(vector<Case> cases, int casenum)
 			cout << "Enter deadline: ";
 			cin >> cases[i].Deadline;
 		}
+	}
+	if (found == false)
+	{
+		cout << "Nothing found!" << endl;
+		return;
 	}
 	RewriteCase(cases, "Path.txt");
 }
