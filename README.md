@@ -1,5 +1,5 @@
 Меню программи:
-![изображение](https://github.com/user-attachments/assets/fbfcf215-6534-40e9-97b2-08c2d3d5f64a)
+![изображение](https://github.com/user-attachments/assets/fbfcf215-6534-40e9-97b2-08c2d3d5f64a) \n
 0. Знайти по назві.
 1. Знайти по пріоритету.
 2. Показати певну справу.
